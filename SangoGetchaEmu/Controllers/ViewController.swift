@@ -1,0 +1,91 @@
+//
+//  ViewController.swift
+//  三國志戰略版抽卡模擬器
+//
+//  Created by Fubon Chu on 10/7/2021.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    var calculatorBrain = CalculatorBrain()
+
+    @IBAction func drawOnePressed(_ sender: UIButton) {
+        calculatorBrain.calculateDrawOne()
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    @IBAction func drawFivePressed(_ sender: UIButton) {
+        calculatorBrain.calculateDrawFive()
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    @IBAction func seasonSelect(_ sender: UIButton) {
+        s1button.backgroundColor = UIColor(red: 218/255, green: 212/255, blue: 193/255, alpha: 1)
+        s2button.backgroundColor = UIColor(red: 218/255, green: 212/255, blue: 193/255, alpha: 1)
+        s3button.backgroundColor = UIColor(red: 218/255, green: 212/255, blue: 193/255, alpha: 1)
+        s4button.backgroundColor = UIColor(red: 218/255, green: 212/255, blue: 193/255, alpha: 1)
+        s5button.backgroundColor = UIColor(red: 218/255, green: 212/255, blue: 193/255, alpha: 1)
+        s1button.isHighlighted = false
+        s2button.isHighlighted = false
+        s3button.isHighlighted = false
+        s4button.isHighlighted = false
+        s5button.isHighlighted = false
+//        s1button.isSelected = false
+//        s2button.isSelected = false
+//        s3button.isSelected = false
+//        s4button.isSelected = false
+//        s5button.isSelected = false
+        sender.isHighlighted = true
+//        sender.isSelected = true
+        sender.backgroundColor = UIColor(red: 132/255, green: 212/255, blue: 193/255, alpha: 1)
+        if sender.tag == 1 {
+            calculatorBrain.seasonOnePool()
+        } else if sender.tag == 2 {
+            calculatorBrain.seasonTwoPool()
+//            print(ShareData.shared.curCharPool)
+        } else if sender.tag == 3 {
+            calculatorBrain.seasonThreePool()
+        } else if sender.tag == 4 {
+            calculatorBrain.seasonFourPool()
+        } else if sender.tag == 5 {
+            calculatorBrain.seasonFivePool()
+        }
+
+    }
+    
+    @IBAction func resetStat(_ sender: UIButton) {
+        resultTextView.text = calculatorBrain.resetStat()
+    }
+    
+    @IBOutlet weak var resultTextView: UITextView!
+    @IBOutlet weak var s1button: UIButton!
+    @IBOutlet weak var s2button: UIButton!
+    @IBOutlet weak var s3button: UIButton!
+    @IBOutlet weak var s4button: UIButton!
+    @IBOutlet weak var s5button: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        resultTextView.text = calculatorBrain.updateStat()
+        s1button.isHighlighted = true
+//        sender.isSelected = true
+        s1button.backgroundColor = UIColor(red: 132/255, green: 212/255, blue: 193/255, alpha: 1)
+//        calculatorBrain.curCharPool = calculatorBrain.charPoolOne
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.cardOneName = calculatorBrain.getCharactorName(cardSerialID: "one")
+            destinationVC.cardTwoName = calculatorBrain.getCharactorName(cardSerialID: "two")
+            destinationVC.cardThreeName = calculatorBrain.getCharactorName(cardSerialID: "three")
+            destinationVC.cardFourName = calculatorBrain.getCharactorName(cardSerialID: "four")
+            destinationVC.cardFiveName = calculatorBrain.getCharactorName(cardSerialID: "five")
+//            destinationVC.resultStatView.text = calculatorBrain.updateStat()
+        }
+    }
+
+}
+
