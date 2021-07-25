@@ -28,6 +28,7 @@ class ResultViewController: UIViewController {
     
     @IBAction func drawOne(_ sender: UIButton) {
         sender.isEnabled = false
+        drawFiveButton.isEnabled = false
         calculatorBrain.calculateDrawOne()
         cardOneName = calculatorBrain.getCharactorName(cardSerialID: "one")
         cardTwoName = calculatorBrain.getCharactorName(cardSerialID: "two")
@@ -39,6 +40,7 @@ class ResultViewController: UIViewController {
     
     @IBAction func drawFive(_ sender: UIButton) {
         sender.isEnabled = false
+        drawOneButton.isEnabled = false
         calculatorBrain.calculateDrawFive()
         cardOneName = calculatorBrain.getCharactorName(cardSerialID: "one")
         cardTwoName = calculatorBrain.getCharactorName(cardSerialID: "two")
@@ -62,6 +64,12 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         updateResult()
         resultStatView.text = calculatorBrain.updateStat()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+//        print("didreceivememorywarningexecuted")
+            // Dispose of any resources that can be recreated
     }
     
     func updateResult() {

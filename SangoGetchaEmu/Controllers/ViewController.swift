@@ -69,12 +69,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resultTextView.text = calculatorBrain.updateStat()
-        s1button.isHighlighted = true
+//        s1button.isHighlighted = true
 //        sender.isSelected = true
         s1button.backgroundColor = UIColor(red: 132/255, green: 212/255, blue: 193/255, alpha: 1)
 //        calculatorBrain.curCharPool = calculatorBrain.charPoolOne
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+            // Dispose of any resources that can be recreated
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
