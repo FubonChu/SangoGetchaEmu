@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		31AECEF926ADD9C900AB1291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECEF826ADD9C900AB1291 /* AppDelegate.swift */; };
 		31AECEFB26ADD9C900AB1291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECEFA26ADD9C900AB1291 /* SceneDelegate.swift */; };
-		31AECEFD26ADD9C900AB1291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECEFC26ADD9C900AB1291 /* ViewController.swift */; };
-		31AECF0026ADD9C900AB1291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AECEFE26ADD9C900AB1291 /* Main.storyboard */; };
 		31AECF0226ADD9CF00AB1291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31AECF0126ADD9CF00AB1291 /* Assets.xcassets */; };
 		31AECF0526ADD9CF00AB1291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AECF0326ADD9CF00AB1291 /* LaunchScreen.storyboard */; };
+		31AECF1126ADDA6800AB1291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AECF0F26ADDA6800AB1291 /* Main.storyboard */; };
+		31AECF1A26ADDB8900AB1291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECF1826ADDB8900AB1291 /* ViewController.swift */; };
+		31AECF1B26ADDB8900AB1291 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECF1926ADDB8900AB1291 /* ResultViewController.swift */; };
+		31AECF1F26ADDBAC00AB1291 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECF1C26ADDBAC00AB1291 /* CalculatorBrain.swift */; };
+		31AECF2026ADDBAC00AB1291 /* CharactorAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECF1D26ADDBAC00AB1291 /* CharactorAll.swift */; };
+		31AECF2126ADDBAC00AB1291 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AECF1E26ADDBAC00AB1291 /* ShareData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31AECEF526ADD9C900AB1291 /* SangoGetchaEmu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SangoGetchaEmu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AECEF826ADD9C900AB1291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AECEFA26ADD9C900AB1291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		31AECEFC26ADD9C900AB1291 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		31AECEFF26ADD9C900AB1291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31AECF0126ADD9CF00AB1291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31AECF0426ADD9CF00AB1291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31AECF0626ADD9CF00AB1291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31AECF1026ADDA6800AB1291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31AECF1826ADDB8900AB1291 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31AECF1926ADDB8900AB1291 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		31AECF1C26ADDBAC00AB1291 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		31AECF1D26ADDBAC00AB1291 /* CharactorAll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactorAll.swift; sourceTree = "<group>"; };
+		31AECF1E26ADDBAC00AB1291 /* ShareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		31AECEF726ADD9C900AB1291 /* SangoGetchaEmu */ = {
 			isa = PBXGroup;
 			children = (
+				31AECF0C26ADD9F300AB1291 /* Models */,
+				31AECF0D26ADD9FA00AB1291 /* Views */,
+				31AECF0E26ADDA0D00AB1291 /* Controllers */,
 				31AECEF826ADD9C900AB1291 /* AppDelegate.swift */,
 				31AECEFA26ADD9C900AB1291 /* SceneDelegate.swift */,
-				31AECEFC26ADD9C900AB1291 /* ViewController.swift */,
-				31AECEFE26ADD9C900AB1291 /* Main.storyboard */,
 				31AECF0126ADD9CF00AB1291 /* Assets.xcassets */,
 				31AECF0326ADD9CF00AB1291 /* LaunchScreen.storyboard */,
 				31AECF0626ADD9CF00AB1291 /* Info.plist */,
 			);
 			path = SangoGetchaEmu;
+			sourceTree = "<group>";
+		};
+		31AECF0C26ADD9F300AB1291 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31AECF1C26ADDBAC00AB1291 /* CalculatorBrain.swift */,
+				31AECF1D26ADDBAC00AB1291 /* CharactorAll.swift */,
+				31AECF1E26ADDBAC00AB1291 /* ShareData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		31AECF0D26ADD9FA00AB1291 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				31AECF0F26ADDA6800AB1291 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		31AECF0E26ADDA0D00AB1291 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				31AECF1826ADDB8900AB1291 /* ViewController.swift */,
+				31AECF1926ADDB8900AB1291 /* ResultViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +162,7 @@
 			files = (
 				31AECF0526ADD9CF00AB1291 /* LaunchScreen.storyboard in Resources */,
 				31AECF0226ADD9CF00AB1291 /* Assets.xcassets in Resources */,
-				31AECF0026ADD9C900AB1291 /* Main.storyboard in Resources */,
+				31AECF1126ADDA6800AB1291 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,29 +173,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31AECEFD26ADD9C900AB1291 /* ViewController.swift in Sources */,
+				31AECF1F26ADDBAC00AB1291 /* CalculatorBrain.swift in Sources */,
+				31AECF1B26ADDB8900AB1291 /* ResultViewController.swift in Sources */,
+				31AECF2026ADDBAC00AB1291 /* CharactorAll.swift in Sources */,
 				31AECEF926ADD9C900AB1291 /* AppDelegate.swift in Sources */,
+				31AECF1A26ADDB8900AB1291 /* ViewController.swift in Sources */,
 				31AECEFB26ADD9C900AB1291 /* SceneDelegate.swift in Sources */,
+				31AECF2126ADDBAC00AB1291 /* ShareData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		31AECEFE26ADD9C900AB1291 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31AECEFF26ADD9C900AB1291 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		31AECF0326ADD9CF00AB1291 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				31AECF0426ADD9CF00AB1291 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		31AECF0F26ADDA6800AB1291 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31AECF1026ADDA6800AB1291 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
