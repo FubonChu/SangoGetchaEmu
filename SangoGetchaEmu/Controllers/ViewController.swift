@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
     var calculatorBrain = CalculatorBrain()
+    private var interstitial: GADInterstitialAd?
 
     @IBAction func drawOnePressed(_ sender: UIButton) {
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+          print("Ad wasn't ready")
+        }
         calculatorBrain.calculateDrawOne()
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
@@ -73,6 +80,17 @@ class ViewController: UIViewController {
 //        sender.isSelected = true
         s1button.backgroundColor = UIColor(red: 132/255, green: 212/255, blue: 193/255, alpha: 1)
 //        calculatorBrain.curCharPool = calculatorBrain.charPoolOne
+        let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                              }
+            )
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,6 +108,20 @@ class ViewController: UIViewController {
             destinationVC.cardFiveName = calculatorBrain.getCharactorName(cardSerialID: "five")
 //            destinationVC.resultStatView.text = calculatorBrain.updateStat()
         }
+    }
+    
+    private func createAD(){
+        let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                              }
+            )
     }
 
 }
