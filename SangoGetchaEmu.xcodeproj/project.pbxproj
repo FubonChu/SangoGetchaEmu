@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -77,7 +77,6 @@
 				31AECEF826ADD9C900AB1291 /* AppDelegate.swift */,
 				31AECEFA26ADD9C900AB1291 /* SceneDelegate.swift */,
 				31AECF0126ADD9CF00AB1291 /* Assets.xcassets */,
-				31AECF0326ADD9CF00AB1291 /* LaunchScreen.storyboard */,
 				31AECF0626ADD9CF00AB1291 /* Info.plist */,
 			);
 			path = SangoGetchaEmu;
@@ -97,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				31AECF0F26ADDA6800AB1291 /* Main.storyboard */,
+				31AECF0326ADD9CF00AB1291 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,7 +124,6 @@
 				7DDF0903A6DF48379E54E4C5 /* Pods-SangoGetchaEmu.debug.xcconfig */,
 				3BF8C37BFE42A35F55586931 /* Pods-SangoGetchaEmu.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
