@@ -20,6 +20,7 @@ class ResultViewController: UIViewController {
     
     @IBAction func backMain(_ sender: UIButton) {
 //        calculatorBrain.resetStat()
+        
         if let parentview = presentingViewController as? ViewController{
             parentview.resultTextView.text = calculatorBrain.updateStat()
         }
