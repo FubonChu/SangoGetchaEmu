@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import GoogleMobileAds
 //import GoogleMobileAds
 
 class ResultViewController: UIViewController {
     
     var calculatorBrain = CalculatorBrain()
+    private var interstitial: GADInterstitialAd?
     var cardOneName: String? = "Hidden"
     var cardTwoName: String? = "Hidden"
     var cardThreeName: String? = "Hidden"
     var cardFourName: String? = "Hidden"
     var cardFiveName: String? = "Hidden"
+    var countToAd: Int = 0
     
     
     @IBAction func backMain(_ sender: UIButton) {
@@ -40,6 +43,11 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func drawFive(_ sender: UIButton) {
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+          print("Ad wasn't ready")
+        }
         sender.isEnabled = false
         drawOneButton.isEnabled = false
         calculatorBrain.calculateDrawFive()
@@ -49,6 +57,11 @@ class ResultViewController: UIViewController {
         cardFourName = calculatorBrain.getCharactorName(cardSerialID: "four")
         cardFiveName = calculatorBrain.getCharactorName(cardSerialID: "five")
         updateResult()
+        countToAd += 1
+        if countToAd >= 10 {
+            countToAd = 0
+            createAD()
+        }
     }
     
     @IBOutlet weak var cardOne: UIImageView!
@@ -139,6 +152,20 @@ class ResultViewController: UIViewController {
             drawFiveButton.isEnabled = true
         }
         resultStatView.text = calculatorBrain.updateStat()
+    }
+    
+    private func createAD(){
+        let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                              }
+            )
     }
 }
 
