@@ -7,7 +7,6 @@
 
 import UIKit
 import GoogleMobileAds
-//import GoogleMobileAds
 
 class ResultViewController: UIViewController {
     
@@ -18,7 +17,7 @@ class ResultViewController: UIViewController {
     var cardThreeName: String? = "Hidden"
     var cardFourName: String? = "Hidden"
     var cardFiveName: String? = "Hidden"
-    var countToAd: Int = 0
+    var countToAd1: Int = 7
     
     
     @IBAction func backMain(_ sender: UIButton) {
@@ -31,6 +30,11 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func drawOne(_ sender: UIButton) {
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+          print("Ad wasn't ready")
+        }
         sender.isEnabled = false
         drawFiveButton.isEnabled = false
         calculatorBrain.calculateDrawOne()
@@ -40,6 +44,13 @@ class ResultViewController: UIViewController {
         cardFourName = calculatorBrain.getCharactorName(cardSerialID: "four")
         cardFiveName = calculatorBrain.getCharactorName(cardSerialID: "five")
         updateResult()
+        if countToAd1 <= 12 {
+            countToAd1 += 1
+//            print (countToAd1)
+        } else {
+            countToAd1 = 0
+            createAD()
+        }
     }
     
     @IBAction func drawFive(_ sender: UIButton) {
@@ -57,9 +68,11 @@ class ResultViewController: UIViewController {
         cardFourName = calculatorBrain.getCharactorName(cardSerialID: "four")
         cardFiveName = calculatorBrain.getCharactorName(cardSerialID: "five")
         updateResult()
-        countToAd += 1
-        if countToAd >= 10 {
-            countToAd = 0
+        if countToAd1 <= 12 {
+            countToAd1 += 1
+//            print (countToAd1)
+        } else {
+            countToAd1 = 0
             createAD()
         }
     }
@@ -156,16 +169,19 @@ class ResultViewController: UIViewController {
     
     private func createAD(){
         let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
-                                        request: request,
-                              completionHandler: { [self] ad, error in
+        // Real AdUnitID
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-6381734354101903/4683510845",
+        // Test AdUnitID
+//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                               request: request,
+                               completionHandler: { [self] ad, error in
                                 if let error = error {
-                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                  return
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
                                 }
                                 interstitial = ad
-                              }
-            )
+                               }
+        )
     }
 }
 

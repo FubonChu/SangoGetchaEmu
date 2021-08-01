@@ -21,12 +21,6 @@ struct CalculatorBrain {
     var cardIDFour: Int = 0
     var cardIDFive: Int = 0
     
-    //    var num5S = 0
-    //    var num4S = 0
-    //    var numDraw = 0
-    //    var numGold = 0
-    //    var fiveSList: [String] = []
-    
     var curCharPool = [
         CharactorAll(name: "SuenKuen", cname: "孫權", rarity: "5S", season: 1),
         CharactorAll(name: "LauBei", cname: "劉備", rarity: "5S", season: 1),

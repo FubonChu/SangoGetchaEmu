@@ -39,13 +39,7 @@ class ViewController: UIViewController {
         s3button.isHighlighted = false
         s4button.isHighlighted = false
         s5button.isHighlighted = false
-//        s1button.isSelected = false
-//        s2button.isSelected = false
-//        s3button.isSelected = false
-//        s4button.isSelected = false
-//        s5button.isSelected = false
         sender.isHighlighted = true
-//        sender.isSelected = true
         sender.backgroundColor = UIColor(red: 132/255, green: 212/255, blue: 193/255, alpha: 1)
         if sender.tag == 1 {
             calculatorBrain.seasonOnePool()
@@ -76,10 +70,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resultTextView.text = calculatorBrain.updateStat()
-//        s1button.isHighlighted = true
-//        sender.isSelected = true
         s1button.backgroundColor = UIColor(red: 132/255, green: 212/255, blue: 193/255, alpha: 1)
-//        calculatorBrain.curCharPool = calculatorBrain.charPoolOne
         let request = GADRequest()
             GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
                                         request: request,
@@ -106,7 +97,6 @@ class ViewController: UIViewController {
             destinationVC.cardThreeName = calculatorBrain.getCharactorName(cardSerialID: "three")
             destinationVC.cardFourName = calculatorBrain.getCharactorName(cardSerialID: "four")
             destinationVC.cardFiveName = calculatorBrain.getCharactorName(cardSerialID: "five")
-//            destinationVC.resultStatView.text = calculatorBrain.updateStat()
         }
     }
     

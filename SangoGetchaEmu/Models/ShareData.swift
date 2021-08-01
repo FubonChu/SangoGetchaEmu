@@ -206,7 +206,4 @@ class ShareData {
     
     private init(){}
     
-//    func updateNum5S() {
-//        num5S += 1
-//    }
 }
