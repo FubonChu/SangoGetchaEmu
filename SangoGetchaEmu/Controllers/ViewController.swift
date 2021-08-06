@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func drawFivePressed(_ sender: UIButton) {
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+          print("Ad wasn't ready")
+        }
         calculatorBrain.calculateDrawFive()
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
@@ -72,7 +77,10 @@ class ViewController: UIViewController {
         resultTextView.text = calculatorBrain.updateStat()
         s1button.backgroundColor = UIColor(red: 132/255, green: 212/255, blue: 193/255, alpha: 1)
         let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+        // Real AdUnitID
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-6381734354101903/4683510845",
+        // Test AdUnitID
+//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
                                         request: request,
                               completionHandler: { [self] ad, error in
                                 if let error = error {
@@ -102,7 +110,10 @@ class ViewController: UIViewController {
     
     private func createAD(){
         let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+        // Real AdUnitID
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-6381734354101903/4683510845",
+        // Test AdUnitID
+//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
                                         request: request,
                               completionHandler: { [self] ad, error in
                                 if let error = error {
